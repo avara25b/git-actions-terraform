@@ -25,6 +25,7 @@ jobs:
             role-session-name: login-session
 
         - run: |
+            cd root-module/
             pwd
             ls
             aws sts get-caller-identity
