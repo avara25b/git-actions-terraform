@@ -12,12 +12,13 @@ permissions:
 
 jobs:
     run-terraform:
-        runs-on: ubuntu-24.04
+        runs-on: ubuntu-22.04
+
         steps:
-        - name: clone repo 
+        - name: Checkout Repository
           uses: actions/checkout@v3
         
-        - name: login to aws role
+        - name: Login to AWS Role
           uses: aws-actions/configure-aws-credentials@v5.1.1
           with:
             aws-region: us-east-1
@@ -26,7 +27,7 @@ jobs:
 
         - run: |
             cd root-module/
-            pwd
             ls
             aws sts get-caller-identity
             terraform init
+            # terraform apply into dev, but also staging environment
