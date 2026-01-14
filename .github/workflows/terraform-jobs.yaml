@@ -26,8 +26,8 @@ jobs:
             role-session-name: login-session
 
         - name: Deploy Terraform Code
+          working-directory: root-module/ 
           run: |
-            cd root-module/
             terraform init
             terraform plan -var-file=dev.tfvars -input=false
             terraform apply -var-file=dev.tfvars -input=false -auto-approve

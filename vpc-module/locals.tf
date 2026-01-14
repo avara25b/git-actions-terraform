@@ -5,7 +5,7 @@ locals {
   subnet3_cidr = "${var.vpc_cidr_prefix}.13.0/24"
   subnet1_zone = "us-east-1a"
   subnet2_zone = "us-east-1b"
-  subnet3_zone = "use-east-1c"
+  subnet3_zone = "us-east-1c"
   subnet1_tag  = "${var.project_name}-${var.environment}-public-subnet-1"
   subnet2_tag  = "${var.project_name}-${var.environment}-public-subnet-2"
   subnet3_tag  = "${var.project_name}-${var.environment}-public-subnet-3"
