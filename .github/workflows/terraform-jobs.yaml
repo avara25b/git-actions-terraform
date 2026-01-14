@@ -25,9 +25,8 @@ jobs:
             role-to-assume: arn:aws:iam::505789305843:role/github-actions-iam-role-for-runner-dev
             role-session-name: login-session
 
-        - run: |
-            cd root-module/
-            ls
-            aws sts get-caller-identity
+        - name: Deploy Terraform Code
+          run: |
             terraform init
-            # terraform apply into dev, but also staging environment
+            terraform plan -var-file=dev.tfvars
+            terraform apply -var-file=dev.tfvars -auto-approve -input=false
