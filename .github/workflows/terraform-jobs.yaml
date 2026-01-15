@@ -28,6 +28,13 @@ jobs:
         - name: Deploy Terraform Code
           working-directory: root-module/ 
           run: |
-            terraform init
+            terraform init -backend-config="bucket=andrii-vara-project-tfstate-file-dev"
             terraform plan -var-file=dev.tfvars -input=false
             terraform apply -var-file=dev.tfvars -input=false -auto-approve
+            aws eks update-kubeconfig --name dev-eks-cluster
+
+# To make this work, in other environments: staging, production
+# 1. Create IAM roles similar to github-actions-iam-role-for-runner-dev in respective accounts
+# 2. Update the role-to-assume ARN in the Login to AWS Role step accordingly
+# 3. Update remote backend to use different S3 buckets for each environment in root-module/providers.tf
+# 4. Update terraform commands to use the right .tfvars file for each environment
