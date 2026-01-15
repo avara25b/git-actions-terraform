@@ -12,6 +12,7 @@ permissions:
 
 jobs:
     run-terraform:
+        environment: dev
         runs-on: ubuntu-22.04
 
         steps:
@@ -30,7 +31,7 @@ jobs:
           run: |
             terraform init -backend-config="bucket=${{ vars.TF_STATE_BUCKET }}"
             terraform plan -var-file=dev.tfvars -input=false
-            terraform destroy -var-file=dev.tfvars -input=false -auto-approve
+            terraform apply -var-file=dev.tfvars -input=false -auto-approve
 
 # To make this work, in other environments: staging, production
 # 1. Create IAM roles similar to github-actions-iam-role-for-runner-dev in respective accounts
