@@ -7,10 +7,9 @@ terraform {
   }
   
   backend "s3" {
-    bucket = "andrii-vara-project-tfstate-file-dev"
     key    = "terraform.tfstate"
     region = "us-east-1"
-    
+    use_lockfile = true
   }
 }
 
