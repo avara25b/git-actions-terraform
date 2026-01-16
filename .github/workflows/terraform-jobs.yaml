@@ -35,6 +35,9 @@ jobs:
         - name: Init Terraform Code
           run: terraform init -backend-config="bucket=${{ vars.TF_STATE_BUCKET }}"
 
+        - name: Check terraform format 
+          run: terraform fmt -check
+
 
         - name: Plan Terraform Code
           run: terraform plan -var-file=${{ vars.STAGE }}.tfvars -input=false
