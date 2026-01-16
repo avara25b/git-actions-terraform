@@ -3,6 +3,8 @@ on:
     push:
         branch:
             - main
+            - develop
+            - 'feature/**'
 
 permissions:
   id-token: write   # This is required for requesting the JWT
@@ -15,6 +17,10 @@ jobs:
         environment: dev
         runs-on: ubuntu-22.04
 
+        defaults:
+          run:
+            working-directory: root-module/
+
         steps:
         - name: Checkout Repository
           uses: actions/checkout@v3
@@ -26,12 +32,15 @@ jobs:
             role-to-assume: ${{ vars.IAM_ROLE }}
             role-session-name: login-session
 
-        - name: Deploy Terraform Code
-          working-directory: root-module/ 
-          run: |
-            terraform init -backend-config="bucket=${{ vars.TF_STATE_BUCKET }}"
-            terraform plan -var-file=${{ vars.STAGE }}.tfvars -input=false
-            terraform apply -var-file=${{ vars.STAGE }}.tfvars -input=false -auto-approve
+        - name: Init Terraform Code
+          run: terraform init -backend-config="bucket=${{ vars.TF_STATE_BUCKET }}"
+
+
+        - name: Plan Terraform Code
+          run: terraform plan -var-file=${{ vars.STAGE }}.tfvars -input=false
+
+        - name: Apply Terraform Code
+          run: terraform apply -var-file=${{ vars.STAGE }}.tfvars -input=false -auto-approve
 
 # To make this work, in other environments: staging, production
 # 1. Create IAM roles similar to github-actions-iam-role-for-runner-dev in respective accounts
