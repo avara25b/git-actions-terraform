@@ -9,3 +9,7 @@ eks_asg_desired_size = 2
 eks_asg_max_size = 5
 eks_asg_min_size = 1
 eks_admin_principal_arn = "arn:aws:iam::505789305843:role/admin_access_role"
+
+vpc_cidr_prefix_dev = "10.0"
+project_name_dev = "project-x"
+environment_dev = "dev"

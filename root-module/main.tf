@@ -59,7 +59,7 @@ module "eks-cluster" {
 module "projectx_vpc" {
   source = "../vpc-module"
 
-  vpc_cidr_prefix = "10.0"
-  project_name = "project-x"
-  environment = "dev"
+  vpc_cidr_prefix = var.vpc_cidr_prefix_dev
+  project_name = var.project_name_dev
+  environment = var.environment_dev
 }

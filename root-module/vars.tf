@@ -42,3 +42,15 @@ variable eks_asg_min_size {
 variable eks_admin_principal_arn {
     type = string
 }
+
+variable vpc_cidr_prefix_dev {
+    type = string
+}
+
+variable project_name_dev {
+    type = string
+}
+
+variable environment_dev {
+    type = string
+}
