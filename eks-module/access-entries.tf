@@ -19,7 +19,7 @@ resource "aws_eks_access_policy_association" "andrii_user_view" {
 }
 
 data "aws_iam_roles" "github-actions-iam-role" {
-  name = "github-actions-iam-role-for-runner-dev-app-cicd"
+  name_regex = "^github-actions-iam-role-for-runner-dev-app-.*"
 }
 
 resource "aws_eks_access_entry" "github_actions_iam_role_access" {
