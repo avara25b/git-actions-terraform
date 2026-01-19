@@ -42,8 +42,8 @@ jobs:
         - name: Plan Terraform Code
           run: terraform plan -var-file=${{ vars.STAGE }}.tfvars -input=false
 
-        - name: Destroy Terraform Code
-          run: terraform destroy -var-file=${{ vars.STAGE }}.tfvars -input=false -auto-approve
+        - name: Apply Terraform Code
+          run: terraform apply -var-file=${{ vars.STAGE }}.tfvars -input=false -auto-approve
 
 # To make this work, in other environments: staging, production
 # 1. Create IAM roles similar to github-actions-iam-role-for-runner-dev in respective accounts
