@@ -13,3 +13,14 @@ eks_admin_principal_arn   = "arn:aws:iam::505789305843:role/admin_access_role"
 vpc_cidr_prefix_dev = "10.0"
 project_name_dev    = "project-x"
 environment_dev     = "dev"
+
+# RDS Module Variables
+cluster_identifier      = "projectx-rds-aurora-cluster"
+engine                  = "aurora-mysql"
+engine_version          = "8.0.mysql_aurora.3.02.0"
+availability_zones      = ["us-east-1a", "us-east-1b", "us-east-1c"]
+database_name           = "mydb-projectx"
+master_username         = "admin"
+backup_retention_period = 5
+preferred_backup_window = "07:00-09:00"
+instance_class = "db.t3.medium"
