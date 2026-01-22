@@ -8,10 +8,10 @@ resource "aws_eks_access_entry" "andrii_user" {
   type          = "STANDARD"
 }
 
-resource "aws_eks_access_policy_association" "andrii_user_view" {
+resource "aws_eks_access_policy_association" "andrii_user_admin" {
   cluster_name  = aws_eks_cluster.kubernetes_cluster.name
   principal_arn = data.aws_iam_user.andrii.arn
-  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminViewPolicy"
+  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
 
   access_scope {
     type = "cluster"
