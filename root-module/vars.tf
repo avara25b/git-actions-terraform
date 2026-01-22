@@ -82,5 +82,5 @@ variable "preferred_backup_window" {
   type = string
 }
 variable "instance_class" {
-  type    = string
+  type = string
 }

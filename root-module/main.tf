@@ -67,13 +67,13 @@ module "projectx_vpc" {
 module "rds" {
   source = "../rds-module"
 
-  cluster_identifier = var.cluster_identifier
-  engine = var.engine
-  engine_version = var.engine_version
-  availability_zones = var.availability_zones
-  database_name = var.database_name
-  master_username = var.master_username
+  cluster_identifier      = var.cluster_identifier
+  engine                  = var.engine
+  engine_version          = var.engine_version
+  availability_zones      = var.availability_zones
+  database_name           = var.database_name
+  master_username         = var.master_username
   backup_retention_period = var.backup_retention_period
   preferred_backup_window = var.preferred_backup_window
-  instance_class = var.instance_class
+  instance_class          = var.instance_class
 }
