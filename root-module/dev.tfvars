@@ -17,7 +17,7 @@ environment_dev     = "dev"
 # RDS Module Variables
 cluster_identifier      = "projectx-rds-aurora-cluster"
 engine                  = "aurora-mysql"
-engine_version          = "8.0.mysql_aurora.3.02.0"
+engine_version          = "8.0.mysql_aurora.3.10.3"
 availability_zones      = ["us-east-1a", "us-east-1b", "us-east-1c"]
 database_name           = "mydb-projectx"
 master_username         = "admin"
