@@ -40,6 +40,6 @@ variable skip_final_snapshot {
 }
 
 variable final_snapshot_identifier {
-  type     = optional(string)
-  default  = null
+  type    = string
+  default = ""
 }

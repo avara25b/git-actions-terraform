@@ -19,7 +19,7 @@ resource "aws_rds_cluster" "rds_cluster" {
   backup_retention_period = var.backup_retention_period
   preferred_backup_window = var.preferred_backup_window
   skip_final_snapshot     = var.skip_final_snapshot
-  final_snapshot_identifier = !var.skip_final_snapshot ? var.final_snapshot_identifier : null
+  final_snapshot_identifier = !var.skip_final_snapshot ? (var.final_snapshot_identifier != "" ? var.final_snapshot_identifier : null) : null
 }
 
 resource "aws_kms_key" "rds" {
