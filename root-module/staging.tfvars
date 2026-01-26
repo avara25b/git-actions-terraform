@@ -8,3 +8,5 @@ eks_ec2_instance_types    = ["t3.medium"]
 eks_asg_desired_size      = 2
 eks_asg_max_size          = 5 # supposed to be bigger number
 eks_asg_min_size          = 1
+
+
