@@ -84,3 +84,7 @@ variable "preferred_backup_window" {
 variable "instance_class" {
   type = string
 }
+
+variable "skip_final_snapshot" {
+  type = bool
+}

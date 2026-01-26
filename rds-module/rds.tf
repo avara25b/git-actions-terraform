@@ -18,6 +18,7 @@ resource "aws_rds_cluster" "rds_cluster" {
   master_user_secret_kms_key_id = aws_kms_key.rds.id
   backup_retention_period = var.backup_retention_period
   preferred_backup_window = var.preferred_backup_window
+  skip_final_snapshot     = var.skip_final_snapshot
 }
 
 resource "aws_kms_key" "rds" {
