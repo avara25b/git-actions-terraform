@@ -15,14 +15,14 @@ project_name_dev    = "project-x"
 environment_dev     = "dev"
 
 # RDS Module Variables
-cluster_identifier      = "projectxrdsauroracluster"
-engine                  = "aurora-mysql"
-engine_version          = "8.0.mysql_aurora.3.10.3"
-availability_zones      = ["us-east-1a", "us-east-1b", "us-east-1c"]
-database_name           = "mydbprojectx"
-master_username         = "admin"
-backup_retention_period = 5
-preferred_backup_window = "07:00-09:00"
-instance_class          = "db.t3.medium"
-skip_final_snapshot     = true
+cluster_identifier        = "projectxrdsauroracluster"
+engine                    = "aurora-mysql"
+engine_version            = "8.0.mysql_aurora.3.10.3"
+availability_zones        = ["us-east-1a", "us-east-1b", "us-east-1c"]
+database_name             = "mydbprojectx"
+master_username           = "admin"
+backup_retention_period   = 5
+preferred_backup_window   = "07:00-09:00"
+instance_class            = "db.t3.medium"
+skip_final_snapshot       = true
 final_snapshot_identifier = "projectxrdsauroracluster-final-snapshot"
