@@ -25,4 +25,3 @@ backup_retention_period   = 5
 preferred_backup_window   = "07:00-09:00"
 instance_class            = "db.t3.medium"
 skip_final_snapshot       = true
-final_snapshot_identifier = "projectxrdsauroracluster-final-snapshot"
