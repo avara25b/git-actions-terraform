@@ -77,4 +77,5 @@ module "rds" {
   preferred_backup_window = var.preferred_backup_window
   instance_class          = var.instance_class
   skip_final_snapshot     = var.skip_final_snapshot
+  final_snapshot_identifier = var.final_snapshot_identifier
 }
