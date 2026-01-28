@@ -10,20 +10,20 @@ eks_asg_max_size          = 5
 eks_asg_min_size          = 1
 eks_admin_principal_arn   = "arn:aws:iam::505789305843:role/admin_access_role"
 
-vpc_cidr_prefix_dev = "10.0"
-project_name_dev    = "project-x"
-environment_dev     = "dev"
+vpc_cidr_prefix_dev  = "10.0"
+project_name_dev     = "project-x"
+environment_dev      = "dev"
 db_subnet_group_name = "projectx-dev-db-subnet-group"
 
 # RDS Module Variables
-cluster_identifier      = "projectxrdsauroracluster"
-engine                  = "aurora-mysql"
-engine_version          = "8.0.mysql_aurora.3.10.3"
-availability_zones      = ["us-east-1a", "us-east-1b", "us-east-1c"]
-database_name           = "mydbprojectx"
-master_username         = "admin"
-backup_retention_period = 5
-preferred_backup_window = "07:00-09:00"
-instance_class          = "db.t3.medium"
-skip_final_snapshot     = true
+cluster_identifier       = "projectxrdsauroracluster"
+engine                   = "aurora-mysql"
+engine_version           = "8.0.mysql_aurora.3.10.3"
+availability_zones       = ["us-east-1a", "us-east-1b", "us-east-1c"]
+database_name            = "mydbprojectx"
+master_username          = "admin"
+backup_retention_period  = 5
+preferred_backup_window  = "07:00-09:00"
+instance_class           = "db.t3.medium"
+skip_final_snapshot      = true
 db_subnet_group_name_dev = "projectx-dev-db-subnet-group"
