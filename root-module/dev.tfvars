@@ -13,6 +13,7 @@ eks_admin_principal_arn   = "arn:aws:iam::505789305843:role/admin_access_role"
 vpc_cidr_prefix_dev = "10.0"
 project_name_dev    = "project-x"
 environment_dev     = "dev"
+db_subnet_group_name = "projectx-dev-db-subnet-group"
 
 # RDS Module Variables
 cluster_identifier      = "projectxrdsauroracluster"
@@ -25,3 +26,4 @@ backup_retention_period = 5
 preferred_backup_window = "07:00-09:00"
 instance_class          = "db.t3.medium"
 skip_final_snapshot     = true
+db_subnet_group_name_dev = "projectx-dev-db-subnet-group"

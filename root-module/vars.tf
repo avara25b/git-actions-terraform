@@ -88,3 +88,7 @@ variable "instance_class" {
 variable "skip_final_snapshot" {
   type = bool
 }
+
+variable "db_subnet_group_name" {
+  type = string
+}

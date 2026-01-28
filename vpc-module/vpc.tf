@@ -81,3 +81,19 @@ output "subnet_ids" {
         aws_subnet.public-subnet-3.id
     ]
 }
+
+resource "aws_db_subnet_group" "rds" {
+  name      = var.db_subnet_group_name
+  subnet_ids = [
+    aws_subnet.public-subnet-1.id,
+    aws_subnet.public-subnet-2.id,
+    aws_subnet.public-subnet-3.id
+  ]
+  tags = {
+    Name = "${var.db_subnet_group_name}-rds-subnet-group"
+  }
+}
+
+output "db_subnet_group_name" {
+  value = aws_db_subnet_group.rds.name
+}

@@ -62,6 +62,7 @@ module "projectx_vpc" {
   vpc_cidr_prefix = var.vpc_cidr_prefix_dev
   project_name    = var.project_name_dev
   environment     = var.environment_dev
+  db_subnet_group_name = var.db_subnet_group_name_dev
 }
 
 module "rds" {
@@ -77,4 +78,5 @@ module "rds" {
   preferred_backup_window = var.preferred_backup_window
   instance_class          = var.instance_class
   skip_final_snapshot     = var.skip_final_snapshot
+  db_subnet_group_name    = module.projectx_vpc.db_subnet_group_name
 }
