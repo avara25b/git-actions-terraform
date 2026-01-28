@@ -62,7 +62,7 @@ module "projectx_vpc" {
   vpc_cidr_prefix      = var.vpc_cidr_prefix_dev
   project_name         = var.project_name_dev
   environment          = var.environment_dev
-  db_subnet_group_name = var.db_subnet_group_name_dev
+  db_subnet_group_name = var.db_subnet_group_name
 }
 
 module "rds" {
