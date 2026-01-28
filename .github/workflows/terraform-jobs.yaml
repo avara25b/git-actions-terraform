@@ -1,7 +1,7 @@
 name: test
 on:
     push:
-        branch:
+        branches:
             - main
             - develop
             - 'feature/**'
@@ -40,9 +40,13 @@ jobs:
 
 
         - name: Plan Terraform Code
+          env:
+            TF_VAR_master_password: ${{ secrets.DB_MASTER_PASSWORD }}
           run: terraform plan -var-file=${{ vars.STAGE }}.tfvars -input=false
 
         - name: Apply Terraform Code
+          env:
+            TF_VAR_master_password: ${{ secrets.DB_MASTER_PASSWORD }}
           run: terraform apply -var-file=${{ vars.STAGE }}.tfvars -input=false -auto-approve
 
 # To make this work, in other environments: staging, production

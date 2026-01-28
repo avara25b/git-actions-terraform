@@ -92,3 +92,8 @@ variable "skip_final_snapshot" {
 variable "db_subnet_group_name" {
   type = string
 }
+
+variable "master_password" {
+  type      = string
+  sensitive = true
+}

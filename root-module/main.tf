@@ -79,4 +79,5 @@ module "rds" {
   instance_class          = var.instance_class
   skip_final_snapshot     = var.skip_final_snapshot
   db_subnet_group_name    = module.projectx_vpc.db_subnet_group_name
+  master_password         = var.master_password
 }

@@ -14,8 +14,9 @@ resource "aws_rds_cluster" "rds_cluster" {
   availability_zones      = var.availability_zones
   database_name           = var.database_name
   master_username         = var.master_username
-  manage_master_user_password  = true
-  master_user_secret_kms_key_id = aws_kms_key.rds.id
+  # manage_master_user_password  = true - for AWS Secrets Manager integration
+  # master_user_secret_kms_key_id = aws_kms_key.rds.id - for AWS Secrets Manager integration
+  master_password         = var.master_password
   backup_retention_period = var.backup_retention_period
   preferred_backup_window = var.preferred_backup_window
   skip_final_snapshot     = var.skip_final_snapshot
